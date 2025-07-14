@@ -6,10 +6,10 @@ BITS Event Manager is a **full-stack campus event management and room-booking sy
 
 ## 🎯 Purpose & Use
 
-1. **Centralised Event Hub** – provides a single portal where every upcoming campus event can be discovered and filtered by date, tag, or organiser.
-2. **Hassle-free Bookings** – replaces manual room reservation emails with automatic conflict-checked bookings backed by Firestore transactions.
-3. **Paperless Attendance** – leverages unique QR codes and a built-in scanner for fast, contact-free check-ins and automatic attendance records.
-4. **Automated Notifications** – keeps organisers and attendees in the loop with instant RSVP confirmations and day-before reminders.
+1. **Centralised Event Hub** - provides a single portal where every upcoming campus event can be discovered and filtered by date, tag, or organiser.
+2. **Hassle-free Bookings** - replaces manual room reservation emails with automatic conflict-checked bookings backed by Firestore transactions.
+3. **Paperless Attendance** - leverages unique QR codes and a built-in scanner for fast, contact-free check-ins and automatic attendance records.
+4. **Automated Notifications** - keeps organisers and attendees in the loop with instant RSVP confirmations and day-before reminders.
 
 ---
 
@@ -77,12 +77,12 @@ BITS Event Manager is a **full-stack campus event management and room-booking sy
 
 ## 🔑 Core Functional Flow
 
-1. **Sign-in** – User logs in with Google; token is sent to backend for verification.
-2. **Role Check** – `authMiddleware` fetches the user’s role; `checkRole` gatekeeps protected endpoints.
-3. **Event Creation** – Club Admin submits form ➜ backend checks room conflicts ➜ stores event (pending/approved) and booking atomically.
-4. **RSVP & QR** – Student RSVPs ➜ backend creates `rsvps` doc + SHA-256 hash ➜ client renders QR code.
-5. **Check-in** – Organiser scans QR ➜ `/admin/check-in` marks attendance if valid and unused.
-6. **Reminders** – `node-cron` runs daily to email tomorrow’s attendees.
+1. **Sign-in** - User logs in with Google; token is sent to backend for verification.
+2. **Role Check** - `authMiddleware` fetches the user’s role; `checkRole` gatekeeps protected endpoints.
+3. **Event Creation** - Club Admin submits form ➜ backend checks room conflicts ➜ stores event (pending/approved) and booking atomically.
+4. **RSVP & QR** - Student RSVPs ➜ backend creates `rsvps` doc + SHA-256 hash ➜ client renders QR code.
+5. **Check-in** - Organiser scans QR ➜ `/admin/check-in` marks attendance if valid and unused.
+6. **Reminders** - `node-cron` runs daily to email tomorrow’s attendees.
 
 ---
 
